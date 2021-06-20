@@ -1,6 +1,4 @@
 #!/bin/bash
-# vim: set ts=4 sts=4 sw=4 et:
-
 LDAP_HOST="${LDAP_HOST:-ldap1.example.com ldap2.example.com}"
 LDAP_PORT="${LDAP_PORT:-389}"
 LDAP_USER="${LDAP_USER:-cn=admin,dc=example,dc=com}"
