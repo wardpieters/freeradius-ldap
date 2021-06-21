@@ -19,4 +19,5 @@ RUN curl -L https://github.com/krallin/tini/releases/latest/download/tini > /usr
 
 # Copy our configuration
 COPY ldap /etc/raddb/mods-available/
+COPY eap /etc/raddb/mods-available/
 COPY init.sh /

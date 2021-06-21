@@ -30,6 +30,7 @@ ldap_subst "@LDAP_CLIENT_BASEDN@" "${LDAP_CLIENT_BASEDN}"
 
 # enable ldap
 ln -s /etc/raddb/mods-available/ldap /etc/raddb/mods-enabled/ldap
+ln -s /etc/raddb/mods-available/eap /etc/raddb/mods-enabled/eap
 
 # configure the default site for ldap
 sed -i -e 's/-ldap/ldap/g' /etc/raddb/sites-available/default
