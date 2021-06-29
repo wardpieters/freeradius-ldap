@@ -170,8 +170,8 @@ eap {
         #  ANYONE who has a certificate signed by them can
         #  authenticate via EAP-TLS!  This is likely not what you want.
         tls-config tls-common {
-                private_key_password = whatever
-                private_key_file = ${certdir}/server.pem
+                #private_key_password = whatever
+                private_key_file = ${certdir}/custom.key
 
                 #  If Private key & Certificate are located in
                 #  the same file, then private_key_file &
@@ -183,7 +183,7 @@ eap {
                 #  only the server certificate, but ALSO all
                 #  of the CA certificates used to sign the
                 #  server certificate.
-                certificate_file = ${certdir}/server.pem
+                certificate_file = ${certdir}/custom.crt
 
                 #  Trusted Root CA list
                 #
@@ -195,7 +195,7 @@ eap {
                 #  In that case, this CA file should contain
                 #  *one* CA certificate.
                 #
-                ca_file = ${cadir}/ca.pem
+                ca_file = ${cadir}/custom_ca.pem
 
                 #  OpenSSL will automatically create certificate chains,
                 #  unless we tell it to not do that.  The problem is that
@@ -204,7 +204,7 @@ eap {
                 #
                 #  When setting "auto_chain = no", the server certificate
                 #  file MUST include the full certificate chain.
-        #       auto_chain = yes
+                auto_chain = no
 
                 #
                 #  If OpenSSL supports TLS-PSK, then we can use
@@ -227,8 +227,8 @@ eap {
                 #  look up the shared key (hexphrase) based on the
                 #  identity.
                 #
-        #       psk_identity = "test"
-        #       psk_hexphrase = "036363823"
+                #psk_identity = "test"
+                #psk_hexphrase = "036363823"
 
                 #
                 #  For DH cipher suites to work, you have to
@@ -247,7 +247,7 @@ eap {
                 #  write to files in its configuration
                 #  directory.
                 #
-        #       random_file = /dev/urandom
+                #random_file = /dev/urandom
 
                 #
                 #  This can never exceed the size of a RADIUS
